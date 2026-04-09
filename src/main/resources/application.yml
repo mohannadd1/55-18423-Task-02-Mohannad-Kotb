@@ -42,8 +42,8 @@ spring:
   elasticsearch:
     uris: http://localhost:9200
 
-USER_NAME: ${USER_NAME:Mohannad_Kotb}
-ID: ${ID:55-18423}
+USER_NAME: Mohannad_Kotb
+ID: 55-18423
 
 app:
   description: "Smart E-Commerce Purchase API"
