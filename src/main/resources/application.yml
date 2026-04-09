@@ -46,5 +46,4 @@ USER_NAME: ${USER_NAME:Mohannad_Kotb}
 ID: ${ID:55-18423}
 
 app:
-  version: "1.0.0"
-  description: "Smart E-Commerce Platform"
+  description: "Smart E-Commerce Purchase API"
