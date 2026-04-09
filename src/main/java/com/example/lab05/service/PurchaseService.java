@@ -39,6 +39,10 @@ public class PurchaseService {
         this.redisTemplate = redisTemplate;
     }
 
+    public List<PurchaseReceipt> getReceiptsByPerson(String personName) {
+        return purchaseReceiptRepository.findByPersonName(personName);
+    }
+
     public PurchaseReceipt executePurchase(PurchaseRequest request) {
 
         // Step 1 — PostgreSQL (HARD dependency)
