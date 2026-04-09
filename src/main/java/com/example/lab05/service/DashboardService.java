@@ -68,7 +68,9 @@ public class DashboardService {
                 .sum();
         int purchaseCount = allReceipts.size();
         List<PurchaseReceipt> recentPurchases = allReceipts.stream()
-                .skip(Math.max(0, allReceipts.size() - 5))
+                .filter(r -> r.getPurchasedAt() != null)
+                .sorted((a, b) -> b.getPurchasedAt().compareTo(a.getPurchasedAt()))
+                .limit(5)
                 .collect(Collectors.toList());
 
         // Step 2 — Neo4j (soft)

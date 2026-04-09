@@ -46,6 +46,9 @@ public class PurchaseService {
     public PurchaseReceipt executePurchase(PurchaseRequest request) {
 
         // Step 1 — PostgreSQL (HARD dependency)
+        if (request.quantity() <= 0) {
+            throw new RuntimeException("Quantity must be greater than zero.");
+        }
         var product = productService.getProductById(request.productId());
         if (product.getStockQuantity() < request.quantity()) {
             throw new RuntimeException("Insufficient stock for product: " + product.getName());
